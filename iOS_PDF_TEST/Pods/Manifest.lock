@@ -1,0 +1,99 @@
+PODS:
+  - libwebp (1.0.0):
+    - libwebp/core (= 1.0.0)
+    - libwebp/dec (= 1.0.0)
+    - libwebp/demux (= 1.0.0)
+    - libwebp/dsp (= 1.0.0)
+    - libwebp/enc (= 1.0.0)
+    - libwebp/mux (= 1.0.0)
+    - libwebp/utils (= 1.0.0)
+    - libwebp/webp (= 1.0.0)
+  - libwebp/core (1.0.0):
+    - libwebp/webp
+  - libwebp/dec (1.0.0):
+    - libwebp/core
+  - libwebp/demux (1.0.0):
+    - libwebp/core
+  - libwebp/dsp (1.0.0):
+    - libwebp/core
+  - libwebp/enc (1.0.0):
+    - libwebp/core
+  - libwebp/mux (1.0.0):
+    - libwebp/core
+  - libwebp/utils (1.0.0):
+    - libwebp/core
+  - libwebp/webp (1.0.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MIHCrypto (0.4.1):
+    - MIHCrypto/AES (= 0.4.1)
+    - MIHCrypto/Core (= 0.4.1)
+    - MIHCrypto/DES (= 0.4.1)
+    - MIHCrypto/Mathematics (= 0.4.1)
+    - MIHCrypto/MD5 (= 0.4.1)
+    - MIHCrypto/RSA (= 0.4.1)
+    - MIHCrypto/SHA (= 0.4.1)
+  - MIHCrypto/AES (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/Core (0.4.1):
+    - OpenSSL-Universal (~> 1.0.1.18)
+  - MIHCrypto/DES (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/Mathematics (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/MD5 (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/RSA (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/SHA (0.4.1):
+    - MIHCrypto/Core
+  - MJRefresh (3.2.0)
+  - OpenSSL-Universal (1.0.1.20)
+  - SSZipArchive (2.1.4)
+  - UICKeyChainStore (2.1.2)
+  - YYCache (1.0.4)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - libwebp (= 1.0.0)
+  - Masonry
+  - MBProgressHUD
+  - MIHCrypto (~> 0.4.0)
+  - MJRefresh
+  - SSZipArchive (= 2.1.4)
+  - UICKeyChainStore
+  - YYCache
+  - YYModel
+  - YYText
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - libwebp
+    - Masonry
+    - MBProgressHUD
+    - MIHCrypto
+    - MJRefresh
+    - OpenSSL-Universal
+    - SSZipArchive
+    - UICKeyChainStore
+    - YYCache
+    - YYModel
+    - YYText
+
+SPEC CHECKSUMS:
+  libwebp: d7e0c95fe97245c97e08101eba10702ebb0f6101
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MIHCrypto: 9c83cf35a3c218928847df8faf1ba080975a0bf2
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  OpenSSL-Universal: 71f2c4b2ae758e2218090f905e95ca0ac5c01be7
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
+  UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 79fee1c6a23b0dbc2756014399ecb26ad9bb6876
+
+COCOAPODS: 1.7.0

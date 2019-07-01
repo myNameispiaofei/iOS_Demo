@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40306D7A6AB9AB349825781D /* libPods-iOS_PDF_TEST.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3561C2D4D4C33E3010D645 /* libPods-iOS_PDF_TEST.a */; };
 		5E1FD63022B8C24300EE0856 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD62F22B8C24300EE0856 /* AppDelegate.m */; };
 		5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD63222B8C24300EE0856 /* ViewController.m */; };
 		5E1FD63922B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD63722B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0433EC1BFBBEF98D198F53E2 /* Pods-iOS_PDF_TEST.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_PDF_TEST.release.xcconfig"; path = "Target Support Files/Pods-iOS_PDF_TEST/Pods-iOS_PDF_TEST.release.xcconfig"; sourceTree = "<group>"; };
+		567D1F590D92D4C916B6B133 /* Pods-iOS_PDF_TEST.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_PDF_TEST.debug.xcconfig"; path = "Target Support Files/Pods-iOS_PDF_TEST/Pods-iOS_PDF_TEST.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1FD62B22B8C24300EE0856 /* iOS_PDF_TEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_PDF_TEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1FD62E22B8C24300EE0856 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E1FD62F22B8C24300EE0856 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		5E54108322C9AE9B008EE4B7 /* ITCommonTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITCommonTool.m; sourceTree = "<group>"; };
 		5E54108922C9DBE2008EE4B7 /* ITTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTestViewController.h; sourceTree = "<group>"; };
 		5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTestViewController.m; sourceTree = "<group>"; };
+		DA3561C2D4D4C33E3010D645 /* libPods-iOS_PDF_TEST.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_PDF_TEST.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40306D7A6AB9AB349825781D /* libPods-iOS_PDF_TEST.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +56,8 @@
 			children = (
 				5E1FD62D22B8C24300EE0856 /* iOS_PDF_TEST */,
 				5E1FD62C22B8C24300EE0856 /* Products */,
+				CFC8CB835E1368041BA29DA6 /* Pods */,
+				F145A0C8A11ADA6F5B9F9E66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		CFC8CB835E1368041BA29DA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				567D1F590D92D4C916B6B133 /* Pods-iOS_PDF_TEST.debug.xcconfig */,
+				0433EC1BFBBEF98D198F53E2 /* Pods-iOS_PDF_TEST.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F145A0C8A11ADA6F5B9F9E66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA3561C2D4D4C33E3010D645 /* libPods-iOS_PDF_TEST.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E1FD64422B8C24500EE0856 /* Build configuration list for PBXNativeTarget "iOS_PDF_TEST" */;
 			buildPhases = (
+				BD47D3A4CBCE255997E9D8D5 /* [CP] Check Pods Manifest.lock */,
 				5E1FD62722B8C24300EE0856 /* Sources */,
 				5E1FD62822B8C24300EE0856 /* Frameworks */,
 				5E1FD62922B8C24300EE0856 /* Resources */,
+				F19FB3C78D60881A1416905C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,6 +204,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BD47D3A4CBCE255997E9D8D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS_PDF_TEST-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F19FB3C78D60881A1416905C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS_PDF_TEST/Pods-iOS_PDF_TEST-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS_PDF_TEST/Pods-iOS_PDF_TEST-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS_PDF_TEST/Pods-iOS_PDF_TEST-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E1FD62722B8C24300EE0856 /* Sources */ = {
@@ -310,6 +379,7 @@
 		};
 		5E1FD64522B8C24500EE0856 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 567D1F590D92D4C916B6B133 /* Pods-iOS_PDF_TEST.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +397,7 @@
 		};
 		5E1FD64622B8C24500EE0856 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0433EC1BFBBEF98D198F53E2 /* Pods-iOS_PDF_TEST.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

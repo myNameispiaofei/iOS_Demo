@@ -28,8 +28,7 @@
 }
 
 
-- (ITNavigationBar *)navigationBar
-{
+- (ITNavigationBar *)navigationBar {
     if (!_navigationBar) {
         _navigationBar = [[ITNavigationBar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 88)];
         _navigationBar.backgroundColor = kRGBAColor(0x00d8c9,1);
