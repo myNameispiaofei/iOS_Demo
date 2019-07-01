@@ -9,12 +9,14 @@
 #import "ViewController.h"
 #import "ITNavigationBar.h"
 #import "ITCommonTool.h"
+#import "ITTestViewController.h"
 
 
 @interface ViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *bgScrollView;
 @property (nonatomic, strong) UITableView  *contentTextView;
 @property (nonatomic, strong) ITNavigationBar *navigationBar;
+@property (nonatomic, strong) UIButton *btn;
 
 @end
 
@@ -25,6 +27,7 @@
     self.navigationController.navigationBar.hidden = YES;
     [self.view addSubview:self.bgScrollView];
     [self.view addSubview:self.navigationBar];
+    [self.view addSubview:self.btn];
 }
 
 
@@ -70,4 +73,20 @@
     self.navigationBar.alpha = offsetcolor;
 }
 
+
+- (UIButton *)btn {
+    if (!_btn) {
+        _btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _btn.backgroundColor = [UIColor redColor];
+        [_btn addTarget:self action:@selector(btnClickAction) forControlEvents:UIControlEventTouchUpInside];
+        _btn.frame = CGRectMake(200, 200, kScreenWidth/3, 50);
+    };
+    return _btn;
+}
+
+
+- (void)btnClickAction {
+    ITTestViewController *vc = [[ITTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

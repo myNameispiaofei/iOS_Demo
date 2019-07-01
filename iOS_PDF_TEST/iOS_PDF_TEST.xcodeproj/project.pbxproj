@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		5E54108122C9AC6C008EE4B7 /* ITNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108022C9AC6C008EE4B7 /* ITNavigationBar.m */; };
 		5E54108422C9AE9B008EE4B7 /* ITCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108322C9AE9B008EE4B7 /* ITCommonTool.m */; };
 		5E54108B22C9DBE2008EE4B7 /* ITTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */; };
+		5EE1D09422CA1A1F000427DE /* PDFTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5E54108322C9AE9B008EE4B7 /* ITCommonTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITCommonTool.m; sourceTree = "<group>"; };
 		5E54108922C9DBE2008EE4B7 /* ITTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTestViewController.h; sourceTree = "<group>"; };
 		5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTestViewController.m; sourceTree = "<group>"; };
+		5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PDFTest.xcassets; sourceTree = "<group>"; };
 		DA3561C2D4D4C33E3010D645 /* libPods-iOS_PDF_TEST.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_PDF_TEST.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,12 +74,14 @@
 		5E1FD62D22B8C24300EE0856 /* iOS_PDF_TEST */ = {
 			isa = PBXGroup;
 			children = (
+				5EE1D09022CA13FD000427DE /* Source */,
 				5E54107C22C9AC20008EE4B7 /* Test */,
 				5E1FD62E22B8C24300EE0856 /* AppDelegate.h */,
 				5E1FD62F22B8C24300EE0856 /* AppDelegate.m */,
 				5E1FD63122B8C24300EE0856 /* ViewController.h */,
 				5E1FD63222B8C24300EE0856 /* ViewController.m */,
 				5E1FD63A22B8C24500EE0856 /* Assets.xcassets */,
+				5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */,
 				5E1FD63F22B8C24500EE0856 /* Info.plist */,
 				5E1FD64022B8C24500EE0856 /* main.m */,
 				5E1FD63722B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld */,
@@ -122,13 +126,19 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		5EE1D09022CA13FD000427DE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		CFC8CB835E1368041BA29DA6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				567D1F590D92D4C916B6B133 /* Pods-iOS_PDF_TEST.debug.xcconfig */,
 				0433EC1BFBBEF98D198F53E2 /* Pods-iOS_PDF_TEST.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -199,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE1D09422CA1A1F000427DE /* PDFTest.xcassets in Resources */,
 				5E1FD63B22B8C24500EE0856 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
