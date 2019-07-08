@@ -26,6 +26,7 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:alphaValue]
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
+#define kIsEmptyString(s) (s == nil || [s isKindOfClass:[NSNull class]] || ([s isKindOfClass:[NSString class]] && s.length == 0))
 
 
 @end
