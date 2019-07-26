@@ -10,6 +10,7 @@
 #import "ITNavigationBar.h"
 #import "ITCommonTool.h"
 #import "ITTestViewController.h"
+#import "SeaAnimationView.h"
 
 
 @interface ViewController ()<UIScrollViewDelegate>
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UITableView  *contentTextView;
 @property (nonatomic, strong) ITNavigationBar *navigationBar;
 @property (nonatomic, strong) UIButton *btn;
+@property (nonatomic, strong) UIImageView *bgImageView;
 
 
 @end
@@ -28,8 +30,8 @@
     self.navigationController.navigationBar.hidden = YES;
     [self.view addSubview:self.bgScrollView];
     [self.view addSubview:self.navigationBar];
+    [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.btn];
-    
     
 }
 
@@ -89,7 +91,17 @@
 
 
 - (void)btnClickAction {
-    ITTestViewController *vc = [[ITTestViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    ITTestViewController *vc = [[ITTestViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    SeaAnimationView *seaView = [[SeaAnimationView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:seaView];
+}
+
+- (UIImageView *)bgImageView {
+    if (!_bgImageView) {
+        _bgImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        _bgImageView.image = [UIImage imageNamed:@"eason.png"];
+    }
+    return _bgImageView;
 }
 @end
