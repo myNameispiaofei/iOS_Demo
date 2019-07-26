@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 #define kITRouterPageName @"pname"
-#define kIKRouterSourceApplication @"it_src_app"
+#define kITRouterSourceApplication @"it_src_app"
 
 UIKIT_EXTERN NSString *const ITRouterDefaultScheme;
 

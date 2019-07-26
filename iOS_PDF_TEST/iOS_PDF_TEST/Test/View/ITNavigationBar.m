@@ -54,4 +54,9 @@
     return _titleLabel;
 }
 
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    NSString *testStr = @"1234567788888999";
+    [testStr drawInRect:CGRectMake(0, 20, 100, 200) withAttributes:nil];
+}
 @end

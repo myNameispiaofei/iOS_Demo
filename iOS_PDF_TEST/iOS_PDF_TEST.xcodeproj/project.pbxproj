@@ -19,6 +19,7 @@
 		5E54108122C9AC6C008EE4B7 /* ITNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108022C9AC6C008EE4B7 /* ITNavigationBar.m */; };
 		5E54108422C9AE9B008EE4B7 /* ITCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108322C9AE9B008EE4B7 /* ITCommonTool.m */; };
 		5E54108B22C9DBE2008EE4B7 /* ITTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */; };
+		5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */; };
 		5EE1D09422CA1A1F000427DE /* PDFTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */; };
 		5EE61E1822CAFADB004E75E7 /* ITSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,8 @@
 		5E54108322C9AE9B008EE4B7 /* ITCommonTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITCommonTool.m; sourceTree = "<group>"; };
 		5E54108922C9DBE2008EE4B7 /* ITTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTestViewController.h; sourceTree = "<group>"; };
 		5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTestViewController.m; sourceTree = "<group>"; };
+		5EA02B4E22DC8D9A0027557D /* NSDictionary+ITUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ITUtility.h"; sourceTree = "<group>"; };
+		5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ITUtility.m"; sourceTree = "<group>"; };
 		5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PDFTest.xcassets; sourceTree = "<group>"; };
 		5EE61E1622CAFADB004E75E7 /* ITSelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITSelectViewController.h; sourceTree = "<group>"; };
 		5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITSelectViewController.m; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 			children = (
 				5E43A2E122D3734B0067D992 /* NSURL+ITUtility.h */,
 				5E43A2E222D3734B0067D992 /* NSURL+ITUtility.m */,
+				5EA02B4E22DC8D9A0027557D /* NSDictionary+ITUtility.h */,
+				5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */,
 			);
 			path = ITFoundation;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 			files = (
 				5E54108122C9AC6C008EE4B7 /* ITNavigationBar.m in Sources */,
 				5E43A2E322D3734B0067D992 /* NSURL+ITUtility.m in Sources */,
+				5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */,
 				5E43A2DC22D34C890067D992 /* ITRouter.m in Sources */,
 				5E1FD63922B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld in Sources */,
 				5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */,

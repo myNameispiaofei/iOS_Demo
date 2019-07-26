@@ -9,6 +9,7 @@
 #import "ITRouterRequest.h"
 #import "ITCommonTool.h"
 #import "NSURL+ITUtility.h"
+#import "NSDictionary+ITUtility.h"
 
 NSString *const ITRouterDefaultScheme = @"ittest";
 
@@ -39,8 +40,10 @@ NSString *const ITRouterDefaultScheme = @"ittest";
     }
     _options = [url it_queryDictionary];
     _pName = [[_options it_stringForKey:kITRouterPageName] lowercaseString];
-    _sourceApplication = [_options ik_stringForKey:kITRouterSourceApplication];
+    _sourceApplication = [_options it_stringForKey:kITRouterSourceApplication];
     
 }
+
+
 
 @end

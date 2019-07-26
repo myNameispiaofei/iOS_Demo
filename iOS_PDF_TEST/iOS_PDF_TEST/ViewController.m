@@ -18,6 +18,7 @@
 @property (nonatomic, strong) ITNavigationBar *navigationBar;
 @property (nonatomic, strong) UIButton *btn;
 
+
 @end
 
 @implementation ViewController
@@ -28,6 +29,8 @@
     [self.view addSubview:self.bgScrollView];
     [self.view addSubview:self.navigationBar];
     [self.view addSubview:self.btn];
+    
+    
 }
 
 

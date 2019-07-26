@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSURL (ITUtility)
 
+- (BOOL)it_isInAppUrl;
+- (BOOL)it_isITLink;
+- (NSDictionary *)it_queryDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END
