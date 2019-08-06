@@ -11,6 +11,7 @@
 #import "ITCommonTool.h"
 #import "ITTestViewController.h"
 #import "SeaAnimationView.h"
+#import "ITTouchTestViewController.h"
 
 
 @interface ViewController ()<UIScrollViewDelegate>
@@ -91,10 +92,17 @@
 
 
 - (void)btnClickAction {
+    
+    
 //    ITTestViewController *vc = [[ITTestViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
-    SeaAnimationView *seaView = [[SeaAnimationView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:seaView];
+    
+    
+//    SeaAnimationView *seaView = [[SeaAnimationView alloc] initWithFrame:self.view.bounds];
+//    [self.view addSubview:seaView];
+    
+    ITTouchTestViewController *vc = [[ITTouchTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (UIImageView *)bgImageView {
