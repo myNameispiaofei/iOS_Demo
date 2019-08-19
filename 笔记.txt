@@ -1,0 +1,12 @@
+题目整理 
+@property 后面可以有哪些修饰符
+atomic  nonatomic  readonly readwrite 
+assgin strong weak copy  (ARC)
+assgin retain copy  (MRC)
+
+atomic 防止写未完进行读操作，数据错误
+
+strong retain ：setter 方法将旧属性 release，再将新的对象赋值，一次retain操作
+assgin 基本数据类型 ，oc对象， weak  OC对象 当修饰对象 assgin需要置nil
+
+copy 修饰不可变    赋值来源：
