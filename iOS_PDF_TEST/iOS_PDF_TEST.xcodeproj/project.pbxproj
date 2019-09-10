@@ -18,6 +18,8 @@
 		5E54108122C9AC6C008EE4B7 /* ITNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108022C9AC6C008EE4B7 /* ITNavigationBar.m */; };
 		5E54108422C9AE9B008EE4B7 /* ITCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108322C9AE9B008EE4B7 /* ITCommonTool.m */; };
 		5E54108B22C9DBE2008EE4B7 /* ITTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */; };
+		5E79BC3423278CBF007A3C66 /* ITCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79BC3223278CBF007A3C66 /* ITCommonTool.m */; };
+		5E79BC3523278CD3007A3C66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD64022B8C24500EE0856 /* main.m */; };
 		5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */; };
 		5EB206A222F8554100774DEB /* ITTouchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A122F8554100774DEB /* ITTouchTestViewController.m */; };
 		5EB206A522F85DB700774DEB /* ITTouchTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A422F85DB700774DEB /* ITTouchTestView.m */; };
@@ -83,6 +85,8 @@
 		5E54108322C9AE9B008EE4B7 /* ITCommonTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITCommonTool.m; sourceTree = "<group>"; };
 		5E54108922C9DBE2008EE4B7 /* ITTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTestViewController.h; sourceTree = "<group>"; };
 		5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTestViewController.m; sourceTree = "<group>"; };
+		5E79BC3223278CBF007A3C66 /* ITCommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCommonTool.m; sourceTree = "<group>"; };
+		5E79BC3323278CBF007A3C66 /* ITCommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCommonTool.h; sourceTree = "<group>"; };
 		5EA02B4E22DC8D9A0027557D /* NSDictionary+ITUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ITUtility.h"; sourceTree = "<group>"; };
 		5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ITUtility.m"; sourceTree = "<group>"; };
 		5EB206A022F8554100774DEB /* ITTouchTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTouchTestViewController.h; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		5E1FD62D22B8C24300EE0856 /* iOS_PDF_TEST */ = {
 			isa = PBXGroup;
 			children = (
+				5E79BC3123278CBF007A3C66 /* Tool */,
 				5EEDAC4F22EAA4D6002E537E /* Resource */,
 				5E43A2E022D372C30067D992 /* ITFoundation */,
 				5E43A2D822D34C2E0067D992 /* Router */,
@@ -252,6 +257,16 @@
 				5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E79BC3123278CBF007A3C66 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5E79BC3223278CBF007A3C66 /* ITCommonTool.m */,
+				5E79BC3323278CBF007A3C66 /* ITCommonTool.h */,
+			);
+			name = Tool;
+			path = Test/Tool;
 			sourceTree = "<group>";
 		};
 		5EB2069F22F854FA00774DEB /* TouchTest */ = {
@@ -499,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E79BC3523278CD3007A3C66 /* main.m in Sources */,
 				5E54108122C9AC6C008EE4B7 /* ITNavigationBar.m in Sources */,
 				5E43A2E322D3734B0067D992 /* NSURL+ITUtility.m in Sources */,
 				5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */,
@@ -512,6 +528,7 @@
 				5EEDAC9322EAA574002E537E /* SeaAnimationView.m in Sources */,
 				5E1FD63022B8C24300EE0856 /* AppDelegate.m in Sources */,
 				5E54108422C9AE9B008EE4B7 /* ITCommonTool.m in Sources */,
+				5E79BC3423278CBF007A3C66 /* ITCommonTool.m in Sources */,
 				5EE61E1822CAFADB004E75E7 /* ITSelectViewController.m in Sources */,
 				5EB206A522F85DB700774DEB /* ITTouchTestView.m in Sources */,
 			);
@@ -640,6 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3T625A5YB7;
 				INFOPLIST_FILE = iOS_PDF_TEST/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,6 +676,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3T625A5YB7;
 				INFOPLIST_FILE = iOS_PDF_TEST/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

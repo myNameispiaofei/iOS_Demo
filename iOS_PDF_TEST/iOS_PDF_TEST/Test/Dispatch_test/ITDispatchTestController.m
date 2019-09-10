@@ -15,12 +15,15 @@
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) NSLock *lock;
 @property (nonatomic, strong) NSCondition  *condition;
+@property (nonatomic, assign) UIStatusBarStyle oldStatusBarStyle;
 @end
 
 @implementation ITDispatchTestController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     _lock = [[NSLock alloc] init];
     _condition = [[NSCondition alloc] init];
     self.textLabel = [[UILabel alloc] init];
@@ -33,7 +36,13 @@
     self.textLabel.text = @"测试文案1";
     self.textLabel.textAlignment = NSTextAlignmentCenter;
     self.textLabel.backgroundColor = [UIColor redColor];
-    
+    self.oldStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:self.oldStatusBarStyle animated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -46,6 +55,8 @@
 //      [self dispatchTest6];
 //  [self dispatchTest7];
     [self dispatchTest8];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//    [self setStatusBarBackgroundColor:[UIColor whiteColor]];
 }
 
 
@@ -198,6 +209,15 @@
     i = 20;
     NSLog(@"mub_dispatchTest#7e i:%ld, isMain:%p",i,[NSThread currentThread]);
     NSLog(@"isMain:%d",[NSThread isMainThread]);
+}
+
+//
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return 2;
 }
 
 

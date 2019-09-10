@@ -105,6 +105,7 @@
 //    ITTouchTestViewController *vc = [[ITTouchTestViewController alloc] init];
     
     ITDispatchTestController *vc = [[ITDispatchTestController alloc] init];
+    vc.view.backgroundColor = kRGBColor(0xffe111);
     [self.navigationController pushViewController:vc animated:YES];
 }
 
