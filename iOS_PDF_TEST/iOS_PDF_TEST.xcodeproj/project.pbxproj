@@ -12,7 +12,6 @@
 		5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD63222B8C24300EE0856 /* ViewController.m */; };
 		5E1FD63922B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD63722B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld */; };
 		5E1FD63B22B8C24500EE0856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1FD63A22B8C24500EE0856 /* Assets.xcassets */; };
-		5E1FD64122B8C24500EE0856 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD64022B8C24500EE0856 /* main.m */; };
 		5E43A2DC22D34C890067D992 /* ITRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A2DB22D34C890067D992 /* ITRouter.m */; };
 		5E43A2DF22D36D4C0067D992 /* ITRouterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A2DE22D36D4C0067D992 /* ITRouterRequest.m */; };
 		5E43A2E322D3734B0067D992 /* NSURL+ITUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A2E222D3734B0067D992 /* NSURL+ITUtility.m */; };
@@ -24,6 +23,7 @@
 		5EB206A522F85DB700774DEB /* ITTouchTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A422F85DB700774DEB /* ITTouchTestView.m */; };
 		5EE1D09422CA1A1F000427DE /* PDFTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */; };
 		5EE61E1822CAFADB004E75E7 /* ITSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */; };
+		5EECAEE5230F8F3800E518C7 /* ITDispatchTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECAEE4230F8F3800E518C7 /* ITDispatchTestController.m */; };
 		5EEDAC7122EAA508002E537E /* heart_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EEDAC5122EAA508002E537E /* heart_5.png */; };
 		5EEDAC7222EAA508002E537E /* lover.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EEDAC5222EAA508002E537E /* lover.png */; };
 		5EEDAC7322EAA508002E537E /* waterFall_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EEDAC5322EAA508002E537E /* waterFall_mask.png */; };
@@ -92,6 +92,8 @@
 		5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PDFTest.xcassets; sourceTree = "<group>"; };
 		5EE61E1622CAFADB004E75E7 /* ITSelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITSelectViewController.h; sourceTree = "<group>"; };
 		5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITSelectViewController.m; sourceTree = "<group>"; };
+		5EECAEE3230F8F3800E518C7 /* ITDispatchTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITDispatchTestController.h; sourceTree = "<group>"; };
+		5EECAEE4230F8F3800E518C7 /* ITDispatchTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITDispatchTestController.m; sourceTree = "<group>"; };
 		5EEDAC5122EAA508002E537E /* heart_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_5.png; sourceTree = "<group>"; };
 		5EEDAC5222EAA508002E537E /* lover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lover.png; sourceTree = "<group>"; };
 		5EEDAC5322EAA508002E537E /* waterFall_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterFall_mask.png; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		5E54107C22C9AC20008EE4B7 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				5EECAEE2230F8BF700E518C7 /* Dispatch_test */,
 				5EB2069F22F854FA00774DEB /* TouchTest */,
 				5EEDAC4E22EA9FBE002E537E /* SeaAniTest */,
 				5E54108822C9DBAF008EE4B7 /* Controller */,
@@ -267,6 +270,15 @@
 			children = (
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		5EECAEE2230F8BF700E518C7 /* Dispatch_test */ = {
+			isa = PBXGroup;
+			children = (
+				5EECAEE3230F8F3800E518C7 /* ITDispatchTestController.h */,
+				5EECAEE4230F8F3800E518C7 /* ITDispatchTestController.m */,
+			);
+			path = Dispatch_test;
 			sourceTree = "<group>";
 		};
 		5EEDAC4E22EA9FBE002E537E /* SeaAniTest */ = {
@@ -493,7 +505,7 @@
 				5E43A2DC22D34C890067D992 /* ITRouter.m in Sources */,
 				5E1FD63922B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld in Sources */,
 				5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */,
-				5E1FD64122B8C24500EE0856 /* main.m in Sources */,
+				5EECAEE5230F8F3800E518C7 /* ITDispatchTestController.m in Sources */,
 				5EB206A222F8554100774DEB /* ITTouchTestViewController.m in Sources */,
 				5E43A2DF22D36D4C0067D992 /* ITRouterRequest.m in Sources */,
 				5E54108B22C9DBE2008EE4B7 /* ITTestViewController.m in Sources */,

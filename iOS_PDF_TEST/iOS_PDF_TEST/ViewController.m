@@ -12,6 +12,7 @@
 #import "ITTestViewController.h"
 #import "SeaAnimationView.h"
 #import "ITTouchTestViewController.h"
+#import "ITDispatchTestController.h"
 
 
 @interface ViewController ()<UIScrollViewDelegate>
@@ -66,7 +67,7 @@
 
 - (void)updateAlphaForNavigationBar:(UIScrollView *)scrollView {
     CGFloat delta = scrollView.contentOffset.y;
-    NSLog(@"mub ----- offsety :%f",delta);
+//    NSLog(@"mub ----- offsety :%f",delta);
     CGFloat offsetcolor = 0;
     CGFloat headerContentViewHeight = 88;
     if (delta > 0 && delta <88) {
@@ -101,7 +102,9 @@
 //    SeaAnimationView *seaView = [[SeaAnimationView alloc] initWithFrame:self.view.bounds];
 //    [self.view addSubview:seaView];
     
-    ITTouchTestViewController *vc = [[ITTouchTestViewController alloc] init];
+//    ITTouchTestViewController *vc = [[ITTouchTestViewController alloc] init];
+    
+    ITDispatchTestController *vc = [[ITDispatchTestController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
