@@ -20,6 +20,10 @@
 
 @implementation ITTestViewController
 
++ (void)load {
+    NSLog(@"11");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configUI];

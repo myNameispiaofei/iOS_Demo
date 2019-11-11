@@ -32,19 +32,48 @@ static NSInteger wingRepeatCount = 0;
 @property (nonatomic, strong) CABasicAnimation *leftAnimation;
 @property (nonatomic, strong) CABasicAnimation *rightAnimation;
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
+@property (nonatomic, strong) UIImageView * roImageView;
+
 @end
 
 @implementation SeaAnimationView
+
+
 
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self configBird];
+        [self addGestureRecognizer:self.tapGesture];
+        [self configRoImage];
     }
     return self;
 }
 
+- (void)configRoImage {
+    [self addSubview:self.roImageView];
+    self.roImageView.frame = CGRectMake(200, 300, 50, 60);
+}
+
+- (UITapGestureRecognizer *)tapGesture {
+    if (!_tapGesture) {
+        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    }
+    return _tapGesture;
+}
+
+- (void)tapAction:(UITapGestureRecognizer *)gesture {
+    CGPoint  origin = [gesture locationInView:self];
+    
+    CALayer * heart1 = [CALayer layer];
+    
+    UIImage *heartImageI = [UIImage imageNamed:@"heart_1"];
+    heart1.frame = CGRectMake(origin.x, origin.y , heartImageI.size.width/2.0, heartImageI.size.height/2.0);
+    [self.layer addSublayer:heart1];
+    [self _loveMoveWithLayer:heart1];
+}
 
 - (void)configBird {
     [self prepareBirdContents];
@@ -127,6 +156,7 @@ static NSInteger wingRepeatCount = 0;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self birdFlyAnimation];
+        [self heartMoveAnimation];
     });
 }
 
@@ -171,8 +201,6 @@ static NSInteger wingRepeatCount = 0;
         [_fBirdBirdLayer addAnimation:firstGroup forKey:nil];
     });
 }
-
-
 
 - (CABasicAnimation *)birdBodyScale:(BOOL)isFirst {
     CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
@@ -295,4 +323,215 @@ static NSInteger wingRepeatCount = 0;
     [_rightAnimation setValue:@"wingright" forKey:@"wingright"];
     return _rightAnimation;
 }
+
+// 飘心动画
+
+
+- (void)heartMoveAnimation {
+    dispatch_after(
+                   dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+                       UIImage *heartImageI = [UIImage imageNamed:@"heart_1"];
+                       CGFloat heartOriginX = kScreenWidth / 2;
+                       
+                       CALayer * heart1 = [CALayer layer];
+                       heart1.frame = CGRectMake(heartOriginX, kScreenWidth - 100 , heartImageI.size.width/2.0, heartImageI.size.height/2.0);
+                       
+                       [self.layer addSublayer:heart1];
+                       
+                       
+                       CALayer *heart2 = [CALayer layer];
+                       heart2.frame = heart1.frame;
+                       [self.layer insertSublayer:heart2 below:heart1];
+                       
+                       CALayer *heart3 = [CALayer layer];
+                       heart3.frame = heart2.frame;
+                       [self.layer insertSublayer:heart3 below:heart2];
+                       
+                       CALayer *heart4 = [CALayer layer];
+                       heart4.frame = heart3.frame;
+                       [self.layer insertSublayer:heart4 below:heart3];
+                       
+                       CALayer *heart5 = [CALayer layer];
+                       heart5.frame = heart4.frame;
+                       [self.layer insertSublayer:heart5 below:heart4];
+                       
+                       CALayer *heart6 = [CALayer layer];
+                       heart6.frame = heart5.frame;
+                       [self.layer insertSublayer:heart6 below:heart5];
+                       
+                       CALayer *heart7 = [CALayer layer];
+                       heart7.frame = heart6.frame;
+                       [self.layer insertSublayer:heart7 below:heart6];
+                       
+                       CALayer *heart8 = [CALayer layer];
+                       heart8.frame = heart7.frame;
+                       [self.layer insertSublayer:heart8 below:heart7];
+                       
+                       dispatch_after(
+                                      dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)),
+                                      dispatch_get_main_queue(), ^{
+                                          [self _loveMoveWithLayer:heart2];
+                                          
+                                      });
+                       dispatch_after(
+                                      dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)),
+                                      dispatch_get_main_queue(), ^{
+                                          [self _loveMoveWithLayer:heart3];
+                                      });
+                       dispatch_after(
+                                      dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)),
+                                      dispatch_get_main_queue(), ^{
+                                          [self _loveMoveWithLayer:heart4];
+                                      });
+                       dispatch_after(
+                                      dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)),
+                                      dispatch_get_main_queue(), ^{
+                                          [self _loveMoveWithLayer:heart5];
+                                      });
+                       dispatch_after(
+                                      dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)),
+                                      dispatch_get_main_queue(), ^{
+                                          [self _loveMoveWithLayer:heart6];
+                                      });
+                       dispatch_after(
+                                      dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.5 * NSEC_PER_SEC)),
+                                      dispatch_get_main_queue(), ^{
+                                          [self _loveMoveWithLayer:heart7];
+                                      });
+                       dispatch_after(
+                                      dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4.0 * NSEC_PER_SEC)),
+                                      dispatch_get_main_queue(), ^{
+                                          [self _loveMoveWithLayer:heart8];
+                                      });
+                       
+                   });
+}
+
+- (void)_loveMoveWithLayer:(CALayer *)moveLayer {
+    NSInteger timeInteval = arc4random() % 2 + 6.5;
+    NSInteger imageCount = arc4random() % 5 + 1;
+    NSInteger path = arc4random() % 3 + 1;
+    
+    moveLayer.contents = (__bridge id _Nullable)(
+                                                 [UIImage imageNamed:[NSString stringWithFormat:@"heart_%ld", imageCount]]
+                                                 .CGImage);
+    CAKeyframeAnimation *keyframeAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+//    CGPoint
+    
+    CGPoint origin = moveLayer.frame.origin;
+    CGFloat spaceX = 60;
+    CGFloat spaceY = (origin.y + moveLayer.frame.size.height * 1.4) / 4.0;
+   
+    UIBezierPath *tPath1 = [UIBezierPath bezierPath];
+    [tPath1 moveToPoint:origin];
+    [tPath1 addQuadCurveToPoint:CGPointMake(origin.x, origin.y - spaceY * 2) controlPoint:CGPointMake(origin.x - spaceX, origin.y - spaceY)];
+    [tPath1 addQuadCurveToPoint:CGPointMake(origin.x, origin.y - spaceY * 4) controlPoint:CGPointMake(origin.x - spaceX, origin.y - spaceY * 3)];
+    [tPath1 closePath];
+    
+    UIBezierPath *tPath2 = [UIBezierPath bezierPath];
+    [tPath2 moveToPoint:origin];
+    [tPath2 addQuadCurveToPoint:CGPointMake(origin.x, origin.y - spaceY * 2)
+                   controlPoint:CGPointMake(origin.x + spaceX, origin.y - spaceY)];
+    [tPath2 addQuadCurveToPoint:CGPointMake(origin.x, origin.y - spaceY * 4)
+                   controlPoint:CGPointMake(origin.x - spaceX, origin.y - spaceY * 3)];
+    [tPath2 closePath];
+    
+    
+    UIBezierPath *tPath3 = [UIBezierPath bezierPath];
+    [tPath3 moveToPoint:origin];
+    [tPath3 addQuadCurveToPoint:CGPointMake(origin.x, origin.y - spaceY * 2)
+                   controlPoint:CGPointMake(origin.x + spaceX + 20, origin.y - spaceY)];
+    [tPath3 addQuadCurveToPoint:CGPointMake(origin.x, origin.y - spaceY * 4)
+                   controlPoint:CGPointMake(origin.x - spaceX -20, origin.y - spaceY * 3)];
+    [tPath3 closePath];
+    
+    switch (path) {
+        case 1:
+            keyframeAnimation.path = tPath1.CGPath;
+            break;
+        case 2:
+            keyframeAnimation.path = tPath2.CGPath;
+            break;
+        case 3:
+            keyframeAnimation.path = tPath3.CGPath;
+            break;
+            
+        default:
+            break;
+    }
+    keyframeAnimation.removedOnCompletion = NO;
+    keyframeAnimation.autoreverses = NO;
+    [keyframeAnimation setValue:@"heartFlyKeyPath" forKey:@"heartFlyKeyPath"];
+    
+    CABasicAnimation *scale = [CABasicAnimation animation];
+    scale.keyPath = @"transform.scale";
+    scale.autoreverses = NO;
+    scale.removedOnCompletion = NO;
+    scale.fillMode = kCAFillModeBoth;
+    scale.repeatCount = 0;
+    
+    scale.timingFunction =
+    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    
+    CATransform3D  transform = CATransform3DMakeScale(2.2, 2.2, 1);
+    scale.fromValue = [NSNumber numberWithFloat:0.4];
+    scale.toValue = [NSValue valueWithCATransform3D:transform];
+    [scale setValue:@"heartFlyScale" forKey:@"heartFlyScale"];
+    
+    CABasicAnimation *opacity = [self opacityFrom:1.0 to:0 duration:5.0 repeatCount:0];
+    
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.duration = timeInteval;
+    group.repeatCount = 0;
+    group.animations = @[keyframeAnimation, scale, opacity];
+    group.delegate = self;
+    
+    [group setValue:@"heartFlyGroup" forKey:@"heartFlyGroup"];
+    group.removedOnCompletion = NO;
+    group.fillMode = kCAFillModeForwards;
+    group.timingFunction =
+    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    group.autoreverses = NO;
+    [moveLayer addAnimation:group forKey:nil];
+
+}
+
+#pragma mark - opacity
+- (CABasicAnimation *)opacityFrom:(CGFloat)from
+                               to:(CGFloat)to
+                         duration:(CGFloat)duration
+                      repeatCount:(NSInteger)repeatCount {
+    CABasicAnimation *opacity =
+    [CABasicAnimation animationWithKeyPath:@"opacity"];
+    
+    opacity.fromValue = [NSNumber numberWithFloat:from];
+    opacity.toValue = [NSNumber numberWithFloat:to];
+    opacity.removedOnCompletion = NO;
+    opacity.fillMode = kCAFillModeForwards;
+    opacity.timingFunction =
+    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    opacity.repeatCount = repeatCount;
+    opacity.duration = duration;
+    opacity.delegate = self;
+    return opacity;
+}
+
+
+- (UIImageView *)roImageView {
+    if (!_roImageView) {
+        _roImageView = [[UIImageView alloc] init];
+        _roImageView.image = [UIImage imageNamed:@"heart_1"];
+    }
+    return _roImageView;
+}
+
+
+- (void)rotateLoveImage {
+    CABasicAnimation *rotateAni = [CABasicAnimation animationWithKeyPath:@"rotation"];
+    
+}
+
+
+
 @end

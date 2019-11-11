@@ -10,3 +10,14 @@ strong retain ：setter 方法将旧属性 release，再将新的对象赋值，
 assgin 基本数据类型 ，oc对象， weak  OC对象 当修饰对象 assgin需要置nil
 
 copy 修饰不可变    赋值来源：
+
+// runtime应用
+// runloop 应用
+// 渲染原理  代码
+// 包大小优化 原理
+// APP 启动流程、优化
+// 编译原理
+// 动画区别优点、常见动画
+// 自动释放池
+// 字典、数组的原理
+// hash 表如何实现，如何解决冲突

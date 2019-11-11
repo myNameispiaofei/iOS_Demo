@@ -20,6 +20,7 @@
 		5E54108B22C9DBE2008EE4B7 /* ITTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */; };
 		5E79BC3423278CBF007A3C66 /* ITCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79BC3223278CBF007A3C66 /* ITCommonTool.m */; };
 		5E79BC3523278CD3007A3C66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD64022B8C24500EE0856 /* main.m */; };
+		5E79C2102328FD92007A3C66 /* ITProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79C20F2328FD91007A3C66 /* ITProduct.m */; };
 		5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */; };
 		5EB206A222F8554100774DEB /* ITTouchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A122F8554100774DEB /* ITTouchTestViewController.m */; };
 		5EB206A522F85DB700774DEB /* ITTouchTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A422F85DB700774DEB /* ITTouchTestView.m */; };
@@ -285,7 +286,7 @@
 		5E79C1322328A1A1007A3C66 /* block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = block.cpp; sourceTree = "<group>"; };
 		5E79C1332328A1A1007A3C66 /* apply.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = apply.c; sourceTree = "<group>"; };
 		5E79C1342328A1A1007A3C66 /* mach_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mach_internal.h; sourceTree = "<group>"; };
-		5E79C1352328A1A1007A3C66 /* queue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = queue.c; sourceTree = "<group>"; };
+		5E79C1352328A1A1007A3C66 /* queue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = queue.c; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
 		5E79C1362328A1A1007A3C66 /* io_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io_internal.h; sourceTree = "<group>"; };
 		5E79C1372328A1A1007A3C66 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		5E79C1382328A1A1007A3C66 /* trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trace.h; sourceTree = "<group>"; };
@@ -346,6 +347,8 @@
 		5E79C1732328A1A2007A3C66 /* event_epoll.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = event_epoll.c; sourceTree = "<group>"; };
 		5E79C1742328A1A2007A3C66 /* libdispatch.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = libdispatch.plist; sourceTree = "<group>"; };
 		5E79C1752328A1A2007A3C66 /* inline_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inline_internal.h; sourceTree = "<group>"; };
+		5E79C20E2328FD91007A3C66 /* ITProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITProduct.h; sourceTree = "<group>"; };
+		5E79C20F2328FD91007A3C66 /* ITProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITProduct.m; sourceTree = "<group>"; };
 		5EA02B4E22DC8D9A0027557D /* NSDictionary+ITUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ITUtility.h"; sourceTree = "<group>"; };
 		5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ITUtility.m"; sourceTree = "<group>"; };
 		5EB206A022F8554100774DEB /* ITTouchTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTouchTestViewController.h; sourceTree = "<group>"; };
@@ -944,6 +947,8 @@
 			children = (
 				5EECAEE3230F8F3800E518C7 /* ITDispatchTestController.h */,
 				5EECAEE4230F8F3800E518C7 /* ITDispatchTestController.m */,
+				5E79C20E2328FD91007A3C66 /* ITProduct.h */,
+				5E79C20F2328FD91007A3C66 /* ITProduct.m */,
 			);
 			path = Dispatch_test;
 			sourceTree = "<group>";
@@ -1244,6 +1249,7 @@
 				5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */,
 				5E43A2DC22D34C890067D992 /* ITRouter.m in Sources */,
 				5E1FD63922B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld in Sources */,
+				5E79C2102328FD92007A3C66 /* ITProduct.m in Sources */,
 				5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */,
 				5EECAEE5230F8F3800E518C7 /* ITDispatchTestController.m in Sources */,
 				5EB206A222F8554100774DEB /* ITTouchTestViewController.m in Sources */,
@@ -1312,7 +1318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1365,7 +1371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
