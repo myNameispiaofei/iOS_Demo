@@ -9,13 +9,15 @@
 #import "ITTestViewController.h"
 #import "ITSelectViewController.h"
 #import "ITCommonTool.h"
-
+#import "ITTestView.h"
 #import <Masonry/Masonry.h>
 
-@interface ITTestViewController () <UITableViewDelegate ,UITableViewDataSource>
+@interface ITTestViewController () <UITableViewDelegate ,UITableViewDataSource, CALayerDelegate>
 @property (nonatomic, strong) UIImageView *bgImageView;
 @property (nonatomic, strong) UITableView *tabelView;
 @property (nonatomic, assign) CGRect starFrame;
+@property (nonatomic, strong) ITTestView *testView;
+@property (nonatomic, strong) ITTestView *test2View;
 @end
 
 @implementation ITTestViewController
@@ -26,8 +28,61 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configUI];
+    self.view.backgroundColor = [UIColor greenColor];
+    self.testView = [[ITTestView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
+//    self.testView.layer.anchorPoint = CGPointMake(0, 0);
+    self.testView.backgroundColor = [UIColor redColor];
+    self.test2View = [[ITTestView alloc] initWithFrame:CGRectMake(90 , 100, 200, 300)];
+    self.test2View.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:self.testView];
+    [self.view addSubview:self.test2View];
+    self.test2View.layer.zPosition = -1.0f;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(testNot) name:@"defaultCenterTest" object:nil];
+    [self sendTestNot];
 }
+
+
+- (void)testNot {
+    BOOL isMain = [NSThread isMainThread];
+    NSLog(@"mub current isMain:%@",@(isMain));
+}
+
+- (void)sendTestNot {
+    dispatch_queue_t sQ1 = dispatch_queue_create("stq01", 0);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+       dispatch_async(sQ1, ^{
+           BOOL isMain = [NSThread isMainThread];
+            NSLog(@"mub current1 isMain:%@",@(isMain));
+           [[NSNotificationCenter defaultCenter] postNotificationName:@"defaultCenterTest" object:nil];
+           
+       });
+    });
+}
+
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
+    NSLog(@"mub--  drwaLayer");
+    CGContextSetLineWidth(ctx, 5.0f);
+    CGContextSetStrokeColorWithColor(ctx, [UIColor orangeColor].CGColor);
+    CGContextStrokeEllipseInRect(ctx, layer.bounds);
+}
+
+
+- (void)displayLayer:(CALayer *)layer {
+     CGRect rect = CGRectMake(0 , 0,  20 ,20 );
+       UIGraphicsBeginImageContext(rect.size);
+       CGContextRef context = UIGraphicsGetCurrentContext();
+       CGContextSetFillColorWithColor(context, [UIColor yellowColor].CGColor);
+       CGContextFillRect(context, rect);
+       UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+       UIGraphicsEndImageContext();
+    NSLog(@"mub curr:%@",image);
+//    UIImage *image = [UIImage imageNamed:@"hello_image"];
+    layer.contents = (__bridge id)image.CGImage;
+    NSLog(@"mub --lalallsl");
+}
+
+
+
 
 - (void)configUI {
     [self.view addSubview:self.bgImageView];

@@ -24,35 +24,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A0C00DE2-6DCE-414D-9B4D-94BB15F186E5"
+            uuid = "61BCD096-25A3-4B7F-AD62-E3BF3293DEC9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOS_PDF_TEST/main.m"
-            timestampString = "591110969.108947"
+            filePath = "iOS_PDF_TEST/Test/View/ITTestView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "main()"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9DDD182B-7C2A-49EE-BDC3-767314201244"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_PDF_TEST/main.m"
-            timestampString = "591110991.249899"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "main()"
-            landmarkType = "9">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "ITTestView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

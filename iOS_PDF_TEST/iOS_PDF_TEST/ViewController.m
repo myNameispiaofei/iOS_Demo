@@ -93,23 +93,24 @@
 
 
 - (void)btnClickAction {
+ 
+    // layer test
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
+//    view.center = self.view.center;
+//    [self.view addSubview:view];
+//    CALayer *blueLayer = [CALayer layer];
+//    UIImage *image = [UIImage imageNamed:@"eason.png"];
+//    blueLayer.frame = self.view.bounds;
+//    blueLayer.backgroundColor = [UIColor blueColor].CGColor;
+//    blueLayer.contents = (__bridge id)image.CGImage;
+//    blueLayer.contentsGravity = kCAGravityResizeAspect;
+////    blueLayer.contentsGravity = kCAGravityCenter;
+////    blueLayer.contentsScale = image.scale;
+//    blueLayer.contentsCenter = CGRectMake(0.1, 0.25, 0.25, 0.25);
+//    [self.view.layer addSublayer:blueLayer];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
-    view.center = self.view.center;
-    [self.view addSubview:view];
-    CALayer *blueLayer = [CALayer layer];
-    UIImage *image = [UIImage imageNamed:@"eason.png"];
-    blueLayer.frame = self.view.bounds;
-    blueLayer.backgroundColor = [UIColor blueColor].CGColor;
-    blueLayer.contents = (__bridge id)image.CGImage;
-    blueLayer.contentsGravity = kCAGravityResizeAspect;
-//    blueLayer.contentsGravity = kCAGravityCenter;
-//    blueLayer.contentsScale = image.scale;
-    blueLayer.contentsCenter = CGRectMake(0.1, 0.25, 0.25, 0.25);
-    [self.view.layer addSublayer:blueLayer];
-    
-//    ITTestViewController *vc = [[ITTestViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    ITTestViewController *vc = [[ITTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
     
     
 //    SeaAnimationView *seaView = [[SeaAnimationView alloc] initWithFrame:self.view.bounds];
