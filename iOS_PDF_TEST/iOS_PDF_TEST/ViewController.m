@@ -13,6 +13,7 @@
 #import "SeaAnimationView.h"
 #import "ITTouchTestViewController.h"
 #import "ITDispatchTestController.h"
+#import "ITCommViewController.h"
 
 
 @interface ViewController ()<UIScrollViewDelegate>
@@ -109,9 +110,9 @@
 //    blueLayer.contentsCenter = CGRectMake(0.1, 0.25, 0.25, 0.25);
 //    [self.view.layer addSublayer:blueLayer];
     
-    ITTestViewController *vc = [[ITTestViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-    
+//    ITTestViewController *vc = [[ITTestViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    [self layerTest];
     
 //    SeaAnimationView *seaView = [[SeaAnimationView alloc] initWithFrame:self.view.bounds];
 //    [self.view addSubview:seaView];
@@ -129,5 +130,10 @@
         _bgImageView.image = [UIImage imageNamed:@"eason.png"];
     }
     return _bgImageView;
+}
+
+- (void)layerTest {
+    ITCommViewController *vc = [[ITCommViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

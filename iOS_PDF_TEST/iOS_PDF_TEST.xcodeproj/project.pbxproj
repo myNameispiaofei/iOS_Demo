@@ -25,6 +25,9 @@
 		5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */; };
 		5EB206A222F8554100774DEB /* ITTouchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A122F8554100774DEB /* ITTouchTestViewController.m */; };
 		5EB206A522F85DB700774DEB /* ITTouchTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A422F85DB700774DEB /* ITTouchTestView.m */; };
+		5EB9F92023B5F6DE001923D4 /* ITCommViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB9F91F23B5F6DE001923D4 /* ITCommViewController.m */; };
+		5EB9F93323B6039D001923D4 /* emoji_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EB9F93123B6039C001923D4 /* emoji_1.png */; };
+		5EB9F93423B6039D001923D4 /* emoji_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EB9F93223B6039D001923D4 /* emoji_2.png */; };
 		5EE1D09422CA1A1F000427DE /* PDFTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */; };
 		5EE61E1822CAFADB004E75E7 /* ITSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */; };
 		5EECAEE5230F8F3800E518C7 /* ITDispatchTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EECAEE4230F8F3800E518C7 /* ITDispatchTestController.m */; };
@@ -358,6 +361,10 @@
 		5EB206A122F8554100774DEB /* ITTouchTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTouchTestViewController.m; sourceTree = "<group>"; };
 		5EB206A322F85DB700774DEB /* ITTouchTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTouchTestView.h; sourceTree = "<group>"; };
 		5EB206A422F85DB700774DEB /* ITTouchTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTouchTestView.m; sourceTree = "<group>"; };
+		5EB9F91E23B5F6DE001923D4 /* ITCommViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCommViewController.h; sourceTree = "<group>"; };
+		5EB9F91F23B5F6DE001923D4 /* ITCommViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITCommViewController.m; sourceTree = "<group>"; };
+		5EB9F93123B6039C001923D4 /* emoji_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_1.png; sourceTree = "<group>"; };
+		5EB9F93223B6039D001923D4 /* emoji_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji_2.png; sourceTree = "<group>"; };
 		5EE1D09322CA1A1F000427DE /* PDFTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PDFTest.xcassets; sourceTree = "<group>"; };
 		5EE61E1622CAFADB004E75E7 /* ITSelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITSelectViewController.h; sourceTree = "<group>"; };
 		5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITSelectViewController.m; sourceTree = "<group>"; };
@@ -523,6 +530,8 @@
 				5E54108A22C9DBE2008EE4B7 /* ITTestViewController.m */,
 				5EE61E1622CAFADB004E75E7 /* ITSelectViewController.h */,
 				5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */,
+				5EB9F91E23B5F6DE001923D4 /* ITCommViewController.h */,
+				5EB9F91F23B5F6DE001923D4 /* ITCommViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -978,6 +987,8 @@
 		5EEDAC5022EAA508002E537E /* animatorImage */ = {
 			isa = PBXGroup;
 			children = (
+				5EB9F93123B6039C001923D4 /* emoji_1.png */,
+				5EB9F93223B6039D001923D4 /* emoji_2.png */,
 				5EEDAC5122EAA508002E537E /* heart_5.png */,
 				5EEDAC5222EAA508002E537E /* lover.png */,
 				5EEDAC5322EAA508002E537E /* waterFall_mask.png */,
@@ -1177,6 +1188,8 @@
 				5EEDAC8322EAA508002E537E /* gift_send_point.png in Resources */,
 				5EEDAC8522EAA508002E537E /* word_front.png in Resources */,
 				5EE1D09422CA1A1F000427DE /* PDFTest.xcassets in Resources */,
+				5EB9F93423B6039D001923D4 /* emoji_2.png in Resources */,
+				5EB9F93323B6039D001923D4 /* emoji_1.png in Resources */,
 				5EEDAC8C22EAA508002E537E /* bird_body.png in Resources */,
 				5EEDAC7F22EAA508002E537E /* heart_1.png in Resources */,
 				5EEDAC7622EAA508002E537E /* sun_4.png in Resources */,
@@ -1249,6 +1262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E79BC3523278CD3007A3C66 /* main.m in Sources */,
+				5EB9F92023B5F6DE001923D4 /* ITCommViewController.m in Sources */,
 				5E54108122C9AC6C008EE4B7 /* ITNavigationBar.m in Sources */,
 				5E43A2E322D3734B0067D992 /* NSURL+ITUtility.m in Sources */,
 				5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */,
