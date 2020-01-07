@@ -11,7 +11,7 @@
 
  #define DEGREES_TO_RADIANS(x) ((x)/180.0*M_PI)
 
-@interface ITCommViewController ()
+@interface ITCommViewController ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImageView *imageView2;
@@ -29,13 +29,20 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.tview1];
-    self.tview1.frame = CGRectMake(50, 50, 100, 100);
-    self.tview1.layer.backgroundColor = [UIColor blueColor].CGColor;
-    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn addTarget:self action:@selector(changColor) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    btn.backgroundColor = [UIColor redColor];
-    btn.frame = CGRectMake(150, 450, 80, 60);
+    self.tview1.frame = self.view.bounds;
+    self.tview1.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    [self beziertest];
+//    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn addTarget:self action:@selector(changColor) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:btn];
+//    btn.backgroundColor = [UIColor greenColor];
+//    btn.frame = CGRectMake(150, 450, 80, 60);
+//
+//
+//    self.colorLayer = [CALayer layer];
+//    self.colorLayer.frame = CGRectMake(50, 50, 100, 100);
+//    self.colorLayer.backgroundColor = [UIColor grayColor].CGColor;
+//    [self.tview1.layer addSublayer:self.colorLayer];
 
 //    [self testColor];
 //    self.tview1.frame = self.view.bounds;
@@ -100,6 +107,7 @@
 //    }];
   
 //    [self layerTest5];
+//    [self testColor2];
 }
 
 - (void)layerTest1
@@ -354,10 +362,48 @@
 //    CGFloat r = (arc4random()%255);
 //    CGFloat g = (arc4random()%255);
 //    CGFloat b = (arc4random()%255);
-//    self.colorLayer.backgroundColor = [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1].CGColor;
+//    UIColor *color = [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1];
+//    CABasicAnimation *animation = [CABasicAnimation animation];
+//
+//    animation.keyPath = @"backgroundColor";
+//    animation.toValue = (__bridge id)color.CGColor;
+//    animation.delegate = self;
+//
+//    [self.colorLayer addAnimation:animation forKey:nil];
 //    [CATransaction commit];
-     [self changColor1];
+//     [self changColor1];
 //    [self layerActionTest];
+    
+    [self keyframeTest];
+
+}
+
+
+
+- (void)keyframeTest {
+    
+    CAKeyframeAnimation * animation = [CAKeyframeAnimation animation];
+    animation.keyPath = @"backgroundColor";
+    animation.duration = 2.5;
+    animation.values = @[
+        (__bridge id)[UIColor blueColor].CGColor,
+        (__bridge id)[UIColor redColor].CGColor,
+        (__bridge id)[UIColor greenColor].CGColor,
+        (__bridge id)[UIColor blueColor].CGColor,
+    ];
+    
+    [self.colorLayer addAnimation:animation forKey:nil];
+    
+}
+
+
+
+- (void)animationDidStop:(CABasicAnimation *)anim finished:(BOOL)flag {
+    NSLog(@"ani did stop!!!");
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    self.colorLayer.backgroundColor = (__bridge CGColorRef)anim.toValue;
+    [CATransaction commit];
 }
 
 - (void)layerActionTest
@@ -400,6 +446,71 @@
     self.colorLayer = [CALayer layer];
     self.colorLayer.frame = self.tview1.bounds;
     [self.tview1.layer addSublayer:self.colorLayer];
+}
+
+- (void)testColor2 {
+    self.colorLayer = [CALayer layer];
+    self.colorLayer.frame = self.tview1.bounds;
+    self.colorLayer.backgroundColor = [UIColor blueColor].CGColor;
+//    CALayer *layer =  [self.colorLayer presentationLayer];
+//
+//    CATransition *transition = [CATransition animation];
+//    transition.type = kCATransitionPush;
+//    transition.subtype =  kCATransitionFromLeft;
+//    self.colorLayer.actions = @{@"backgroundColor":transition};
+    [self.tview1.layer addSublayer:self.colorLayer];
+    
+    
+}
+
+//
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    CGPoint point = [[touches anyObject] locationInView:self.view];
+//    if ([self.colorLayer hitTest:point]) {
+//        CGFloat r = (arc4random()%255);
+//        CGFloat g = (arc4random()%255);
+//        CGFloat b = (arc4random()%255);
+//        self.colorLayer.backgroundColor = [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1].CGColor;
+//    } else {
+//        [CATransaction begin];
+//        [CATransaction setAnimationDuration:4.0];
+//        self.colorLayer.position = point;
+//        [CATransaction commit];
+//    }
+//}
+
+
+
+- (void)beziertest
+{
+    UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
+    [bezierPath moveToPoint:CGPointMake(0, 150)];
+    
+    [bezierPath addCurveToPoint:CGPointMake(375, 150) controlPoint1:CGPointMake(100, 250) controlPoint2:CGPointMake(200, 50)];
+    
+    CAShapeLayer *pathLayer = [CAShapeLayer layer];
+    pathLayer.path = bezierPath.CGPath;
+    pathLayer.fillColor = [UIColor clearColor].CGColor;
+    pathLayer.strokeColor = [UIColor redColor].CGColor;
+    pathLayer.lineWidth = 3.0;
+    [self.tview1.layer addSublayer:pathLayer];
+    
+    CALayer *shipLayer = [CALayer layer];
+    shipLayer.frame = CGRectMake(0, 0, 64, 64);
+    shipLayer.position = CGPointMake(0, 150);
+    shipLayer.contents = (__bridge id)[UIImage imageNamed:@"emoji_2.png"].CGImage;
+    
+    [self.tview1.layer addSublayer:shipLayer];
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+    animation.keyPath = @"position";
+    animation.duration = 4.0;
+    animation.path = bezierPath.CGPath;
+    animation.repeatCount = CGFLOAT_MAX;
+    animation.rotationMode = kCAAnimationRotateAuto;
+    
+    [shipLayer addAnimation:animation forKey:nil];
+    
 }
 
 
