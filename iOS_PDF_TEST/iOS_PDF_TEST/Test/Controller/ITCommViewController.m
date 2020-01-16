@@ -18,6 +18,9 @@
 @property (nonatomic, strong) UIView *tview1;
 @property (nonatomic, strong) UIView *tview2;
 @property (nonatomic, strong) CALayer *colorLayer;
+@property (nonatomic, strong) NSArray <UIImage*>* imageArr;
+@property (nonatomic, strong) CALayer *shipLayer;
+@property (nonatomic, strong) CALayer *doorLayer;
 
 
 @end
@@ -31,18 +34,31 @@
     [self.view addSubview:self.tview1];
     self.tview1.frame = self.view.bounds;
     self.tview1.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    [self beziertest];
-//    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [btn addTarget:self action:@selector(changColor) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:btn];
-//    btn.backgroundColor = [UIColor greenColor];
-//    btn.frame = CGRectMake(150, 450, 80, 60);
+//    [self.tview1.layer addSublayer:self.shipLayer];
+//    [self doorTest];
+//    [self.tview1 addSubview:self.imageView];
+//    self.imageView.frame = CGRectMake(50, 50, 70, 70);
+   // [self beziertest];
+//    [self keyAniframtest];
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn addTarget:self action:@selector(changColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    btn.backgroundColor = [UIColor greenColor];
+    btn.frame = CGRectMake(100, 450, 80, 60);
+    
+    
+    UIButton * btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn1 addTarget:self action:@selector(stopAni) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn1];
+    btn1.backgroundColor = [UIColor yellowColor];
+    btn1.frame = CGRectMake(200, 450, 80, 60);
+//    [self switchImageTest];
 //
 //
-//    self.colorLayer = [CALayer layer];
-//    self.colorLayer.frame = CGRectMake(50, 50, 100, 100);
-//    self.colorLayer.backgroundColor = [UIColor grayColor].CGColor;
-//    [self.tview1.layer addSublayer:self.colorLayer];
+    self.colorLayer = [CALayer layer];
+    self.colorLayer.frame = CGRectMake(50, 50, 100, 100);
+    self.colorLayer.backgroundColor = [UIColor redColor].CGColor;
+    [self.tview1.layer addSublayer:self.colorLayer];
 
 //    [self testColor];
 //    self.tview1.frame = self.view.bounds;
@@ -177,7 +193,7 @@
 {
     if (!_imageView) {
         _imageView = [[UIImageView alloc] init];
-        _imageView.image = [UIImage imageNamed:@"emoji_2.png"];
+        _imageView.image = [UIImage imageNamed:@"emoji_1.jpg"];
     }
     return _imageView;
 }
@@ -228,7 +244,7 @@
     transform = CATransform3DMakeTranslation(0, 100, 0);
     transform = CATransform3DRotate(transform, -M_PI_2, 1, 0, 0);
     [self addFace:4 withTransform:transform];
-    
+     
     transform = CATransform3DMakeTranslation(-100, 0, 0);
     transform = CATransform3DRotate(transform, -M_PI_2, 0, 1, 0);
     [self addFace:5 withTransform:transform];
@@ -374,8 +390,11 @@
 //     [self changColor1];
 //    [self layerActionTest];
     
-    [self keyframeTest];
-
+    //[self keyframeTest];
+//    [self switchButtonAction];
+//    [self startAni];
+  
+    [self changeEffectTest];
 }
 
 
@@ -398,13 +417,13 @@
 
 
 
-- (void)animationDidStop:(CABasicAnimation *)anim finished:(BOOL)flag {
-    NSLog(@"ani did stop!!!");
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
-    self.colorLayer.backgroundColor = (__bridge CGColorRef)anim.toValue;
-    [CATransaction commit];
-}
+//- (void)animationDidStop:(CABasicAnimation *)anim finished:(BOOL)flag {
+//    NSLog(@"ani did stop!!!");
+//    [CATransaction begin];
+//    [CATransaction setDisableActions:YES];
+//    self.colorLayer.backgroundColor = (__bridge CGColorRef)anim.toValue;
+//    [CATransaction commit];
+//}
 
 - (void)layerActionTest
 {
@@ -497,19 +516,242 @@
     
     CALayer *shipLayer = [CALayer layer];
     shipLayer.frame = CGRectMake(0, 0, 64, 64);
-    shipLayer.position = CGPointMake(0, 150);
+    shipLayer.position = CGPointMake(150, 150);
     shipLayer.contents = (__bridge id)[UIImage imageNamed:@"emoji_2.png"].CGImage;
     
     [self.tview1.layer addSublayer:shipLayer];
     
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
-    animation.keyPath = @"position";
-    animation.duration = 4.0;
-    animation.path = bezierPath.CGPath;
-    animation.repeatCount = CGFLOAT_MAX;
-    animation.rotationMode = kCAAnimationRotateAuto;
+//    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+//    animation.keyPath = @"position";
+//    animation.duration = 4.0;
+//    animation.path = bezierPath.CGPath;
+//    animation.repeatCount = CGFLOAT_MAX;
+//    animation.rotationMode = kCAAnimationRotateAuto;
+//
+//    [shipLayer addAnimation:animation forKey:nil];
     
-    [shipLayer addAnimation:animation forKey:nil];
+    
+    
+    CABasicAnimation *baseAnimation = [CABasicAnimation animation];
+    baseAnimation.keyPath = @"transform";
+    baseAnimation.duration = 2.0;
+    baseAnimation.byValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI*2.0, 0, 1, 0)];
+    [shipLayer addAnimation:baseAnimation forKey:nil];
+    
+}
+
+- (void)keyAniframtest
+{
+    UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
+    [bezierPath moveToPoint:CGPointMake(0, 150)];
+    [bezierPath addCurveToPoint:CGPointMake(375, 150) controlPoint1:CGPointMake(100, 250) controlPoint2:CGPointMake(200, 50)];
+    
+    
+    CAShapeLayer *pathLayer = [CAShapeLayer layer];
+    pathLayer.path = bezierPath.CGPath;
+    pathLayer.fillColor = [UIColor clearColor].CGColor;
+    pathLayer.strokeColor = [UIColor redColor].CGColor;
+    pathLayer.lineWidth = 3.0;
+    
+    [self.tview1.layer addSublayer:pathLayer];
+    
+    CALayer *colorLayer = [CALayer layer];
+    colorLayer.frame = CGRectMake(64, 0, 64, 64);
+    colorLayer.position = CGPointMake(0, 150);
+    colorLayer.backgroundColor = [UIColor greenColor].CGColor;
+    [self.tview1.layer addSublayer:colorLayer];
+    
+    CAKeyframeAnimation *ani1 = [CAKeyframeAnimation animation];
+    ani1.keyPath = @"position";
+    ani1.path = bezierPath.CGPath;
+    ani1.rotationMode = kCAAnimationRotateAuto;
+    
+    CABasicAnimation *ani2 = [CABasicAnimation animation];
+    ani2.keyPath = @"backgroundColor";
+    ani2.toValue = (__bridge id)[UIColor redColor].CGColor;
+    
+    CAAnimationGroup * groupAni = [CAAnimationGroup animation];
+    groupAni.animations = @[ani1, ani2];
+    groupAni.duration = 4.0;
+    [colorLayer addAnimation:groupAni forKey:nil];
+    
+}
+
+
+/*
+ 过度动画Test
+ */
+
+
+- (void)switchImageTest
+{
+    self.imageArr = @[
+        [UIImage imageNamed:@"emoji_3.jpg"],
+        [UIImage imageNamed:@"emoji_4.jpg"],
+        [UIImage imageNamed:@"emoji_5.jpg"],
+        [UIImage imageNamed:@"emoji_6.jpg"],
+        [UIImage imageNamed:@"emoji_7.jpg"],
+    ];
+    self.imageView.image = self.imageArr[0];
+}
+
+
+
+- (void)switchButtonAction
+{
+//    CATransition *transition = [CATransition animation];
+//    transition.type = kCATransitionReveal;
+////    transition.subtype = kCATransitionFromTop;
+//    [self.imageView.layer addAnimation:transition forKey:nil];
+//    UIImage *current = self.imageView.image;
+//    NSUInteger index = [self.imageArr indexOfObject:current];
+//    index = (index +1)%(self.imageArr.count);
+//    self.imageView.image = self.imageArr[index];
+//    [self switchButtonAction1];
+    [self performTransition];
+}
+
+
+- (void)switchButtonAction1
+{
+    [UIView transitionWithView:self.imageView duration:0.5 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
+        UIImage *current = self.imageView.image;
+        NSUInteger index = [self.imageArr indexOfObject:current];
+        index = (index +1)%(self.imageArr.count);
+        self.imageView.image = self.imageArr[index];
+    } completion:nil];
+}
+
+
+
+- (void)performTransition
+{
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, 0, [UIScreen mainScreen].scale);
+    [self.tview1.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *coverImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIImageView *coverView =[[UIImageView alloc] initWithImage:coverImage];
+    coverView.frame = self.view.bounds;
+    
+//    [self.view addSubview:coverView];
+    CGFloat r  = (arc4random()%255);
+    CGFloat g  = (arc4random()%255);
+    CGFloat b  = (arc4random()%255);
+    UIColor *color = [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1];
+    self.tview1.backgroundColor = color;
+    [self.tview1 addSubview:coverView];
+    
+    [UIView animateWithDuration:1 animations:^{
+        CGAffineTransform tra = CGAffineTransformMakeScale(1, 1);
+        tra = CGAffineTransformRotate(tra, M_PI_2);
+        coverView.transform = tra;
+        coverView.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [coverView removeFromSuperview];
+    }];
+    
+}
+
+- (void)stopAni
+{
+    [self.shipLayer removeAnimationForKey:@"hell_ani"];
+}
+
+- (void)startAni
+{
+    CABasicAnimation *basAni = [CABasicAnimation animation];
+    basAni.duration = 4.0;
+    basAni.byValue = @(M_PI *2);
+    basAni.keyPath = @"transform.rotation";
+    [self.shipLayer addAnimation:basAni forKey:@"hell_ani"];
+}
+
+- (CALayer *)shipLayer {
+    if (!_shipLayer) {
+        CALayer *shipLayer = [CALayer layer];
+        shipLayer.frame = CGRectMake(0, 0, 128 , 128);
+        shipLayer.position = CGPointMake(150, 150);
+        shipLayer.contents = (__bridge id)[UIImage imageNamed:@"emoji_2.png"].CGImage;
+        _shipLayer = shipLayer;
+    }
+    return _shipLayer;
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    NSLog(@"dadadada");
+}
+
+
+
+- (void)doorTest
+{
+    [self.tview1.layer addSublayer:self.doorLayer];
+    CATransform3D trans = CATransform3DIdentity;
+    trans.m34 = -1.0/5000.0;
+    self.tview1.layer.sublayerTransform = trans;
+    UIPanGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    [self.tview1 addGestureRecognizer:panGes];
+    self.doorLayer.speed = 0.0;
+    
+    CABasicAnimation *ani = [CABasicAnimation animation];
+    ani.keyPath = @"transform.rotation.y";
+    ani.toValue = @(M_PI_2);
+    ani.duration = 1.0;
+    [self.doorLayer addAnimation:ani forKey:nil];
+}
+
+- (void)panAction:(UIPanGestureRecognizer *)pan
+{
+    CGFloat x = [pan translationInView:self.tview1].x;
+    x /= 200;
+    CFTimeInterval timeOffset = self.doorLayer.timeOffset;
+    timeOffset = MIN(0.999, MAX(0.0, timeOffset - x));
+    
+    self.doorLayer.timeOffset = timeOffset;
+    [pan setTranslation:CGPointZero inView:self.tview1];
+    
+}
+
+- (CALayer *)doorLayer {
+    if (!_doorLayer) {
+        CALayer *shipLayer = [CALayer layer];
+        shipLayer.frame = CGRectMake(0, 0, 128 , 128*2);
+        shipLayer.position = CGPointMake(150, 150);
+        shipLayer.contents = (__bridge id)[UIImage imageNamed:@"door.jpg"].CGImage;
+        shipLayer.anchorPoint = CGPointMake(1, 0.5);
+        
+        _doorLayer = shipLayer;
+    }
+    return _doorLayer;
+}
+
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    [CATransaction begin];
+//    [CATransaction setAnimationDuration:1.0];
+//    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]];
+//    self.colorLayer.position = [[touches anyObject] locationInView:self.tview1];
+//    [CATransaction commit];
+//}
+
+// 缓冲测试
+
+- (void)changeEffectTest
+{
+    CAKeyframeAnimation *keyAni = [CAKeyframeAnimation animation];
+    keyAni.keyPath = @"backgroundColor";
+    keyAni.duration = 2.0;
+    keyAni.values = @[
+                    (__bridge id)[UIColor blueColor].CGColor,
+                    (__bridge id)[UIColor redColor].CGColor,
+                    (__bridge id)[UIColor greenColor].CGColor,
+                    (__bridge id)[UIColor blueColor].CGColor,
+                    ];
+    
+    CAMediaTimingFunction  *fn = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+    keyAni.timingFunctions = @[fn, fn, fn];
+    [self.colorLayer addAnimation:keyAni forKey:nil];
+    
     
 }
 

@@ -8,8 +8,11 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "ITTestViewController.h"
+#import "ITSelectViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
+@property (nonatomic, strong) UITabBarController *tabarCV;
 
 @end
 
@@ -24,12 +27,32 @@
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:root];
     self.window.rootViewController = nv;
     return YES;
+    
+//    UIViewController *v1 = [[ITTestViewController alloc] init];
+//    UIViewController *v2 = [[ITSelectViewController alloc] init];
+//    self.tabarCV = [[UITabBarController alloc] init];
+//    self.tabarCV.viewControllers = @[v1, v2];
+//    self.tabarCV.delegate = self;
+//    UITabBarItem * item = [UITabBarItem new];
+//    item.title = @"11";
+//
+//    UITabBarItem * item1 = [UITabBarItem new];
+//    item1.title = @"22";
+//
+//    self.tabarCV.tabBarItem = item;
+//    self.window.rootViewController = self.tabarCV;
+//    return YES;
 }
 
 
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    CATransition *transiton = [CATransition animation];
+    transiton.type = kCATransitionFade;
+    [self.tabarCV.view.layer addAnimation:transiton forKey:nil];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+   
 }
 
 
