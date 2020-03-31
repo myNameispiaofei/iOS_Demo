@@ -12,6 +12,7 @@
 		5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD63222B8C24300EE0856 /* ViewController.m */; };
 		5E1FD63922B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD63722B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld */; };
 		5E1FD63B22B8C24500EE0856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1FD63A22B8C24500EE0856 /* Assets.xcassets */; };
+		5E3F0324242CBD6600F39433 /* MULifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F0323242CBD6600F39433 /* MULifeViewController.m */; };
 		5E41F2242379068600A4029B /* ITTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E41F2232379068600A4029B /* ITTestView.m */; };
 		5E43A2DC22D34C890067D992 /* ITRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A2DB22D34C890067D992 /* ITRouter.m */; };
 		5E43A2DF22D36D4C0067D992 /* ITRouterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A2DE22D36D4C0067D992 /* ITRouterRequest.m */; };
@@ -150,6 +151,8 @@
 		5E1FD63A22B8C24500EE0856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E1FD63F22B8C24500EE0856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1FD64022B8C24500EE0856 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5E3F0322242CBD6600F39433 /* MULifeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MULifeViewController.h; sourceTree = "<group>"; };
+		5E3F0323242CBD6600F39433 /* MULifeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MULifeViewController.m; sourceTree = "<group>"; };
 		5E41F2222379068600A4029B /* ITTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTestView.h; sourceTree = "<group>"; };
 		5E41F2232379068600A4029B /* ITTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTestView.m; sourceTree = "<group>"; };
 		5E43A2DA22D34C890067D992 /* ITRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITRouter.h; sourceTree = "<group>"; };
@@ -544,6 +547,8 @@
 				5EE61E1722CAFADB004E75E7 /* ITSelectViewController.m */,
 				5EB9F91E23B5F6DE001923D4 /* ITCommViewController.h */,
 				5EB9F91F23B5F6DE001923D4 /* ITCommViewController.m */,
+				5E3F0322242CBD6600F39433 /* MULifeViewController.h */,
+				5E3F0323242CBD6600F39433 /* MULifeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1297,6 +1302,7 @@
 				5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */,
 				5EECAEE5230F8F3800E518C7 /* ITDispatchTestController.m in Sources */,
 				5EB206A222F8554100774DEB /* ITTouchTestViewController.m in Sources */,
+				5E3F0324242CBD6600F39433 /* MULifeViewController.m in Sources */,
 				5E43A2DF22D36D4C0067D992 /* ITRouterRequest.m in Sources */,
 				5E54108B22C9DBE2008EE4B7 /* ITTestViewController.m in Sources */,
 				5EEDAC9322EAA574002E537E /* SeaAnimationView.m in Sources */,

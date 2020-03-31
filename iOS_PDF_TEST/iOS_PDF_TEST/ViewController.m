@@ -14,6 +14,7 @@
 #import "ITTouchTestViewController.h"
 #import "ITDispatchTestController.h"
 #import "ITCommViewController.h"
+#import "MULifeViewController.h"
 
 typedef void(^ITTestBolock)(void);
 
@@ -29,23 +30,23 @@ typedef void(^ITTestBolock)(void);
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    NSInteger val = 0;
-    ITTestBolock block = ^{
-        NSLog(@"this is val=%ld",val);
-    };
-    val = 20;
-    NSLog(@"this is begain val=%ld",val);
-    block();
-    NSLog(@"this is val=%ld",val);
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//    NSInteger val = 0;
+//    ITTestBolock block = ^{
+//        NSLog(@"this is val=%ld",val);
+//    };
+//    val = 20;
+//    NSLog(@"this is begain val=%ld",val);
+//    block();
+//    NSLog(@"this is val=%ld",val);
 //    self.navigationController.navigationBar.hidden = YES;
 //    [self.view addSubview:self.bgScrollView];
 //    [self.view addSubview:self.navigationBar];
 //    [self.view addSubview:self.bgImageView];
 //    [self.view addSubview:self.btn];
-    
-}
+//
+//}
 
 
 //- (ITNavigationBar *)navigationBar {
@@ -91,15 +92,24 @@ typedef void(^ITTestBolock)(void);
 //}
 //
 //
-//- (UIButton *)btn {
-//    if (!_btn) {
-//        _btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        _btn.backgroundColor = [UIColor redColor];
-//        [_btn addTarget:self action:@selector(btnClickAction) forControlEvents:UIControlEventTouchUpInside];
-//        _btn.frame = CGRectMake(200, 200, kScreenWidth/3, 50);
-//    };
-//    return _btn;
-//}
+- (UIButton *)btn {
+    if (!_btn) {
+        _btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _btn.backgroundColor = [UIColor redColor];
+        [_btn addTarget:self action:@selector(btnClickAction) forControlEvents:UIControlEventTouchUpInside];
+        _btn.frame = CGRectMake(200, 200, kScreenWidth/3, 50);
+    };
+    return _btn;
+}
+
+
+- (void)btnClickAction {
+    MULifeViewController *lifeVC = [[MULifeViewController alloc] init];
+//    [self.navigationController pushViewController:lifeVC animated:YES];
+    [self presentViewController:lifeVC animated:YES completion:nil];
+    
+}
+
 //
 //
 //- (void)btnClickAction {
@@ -145,4 +155,50 @@ typedef void(^ITTestBolock)(void);
 //    ITCommViewController *vc = [[ITCommViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
 //}
+
+
+- (void)loadView {
+    [super loadView];
+    NSLog(@"%@ --%@",[self class],NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.btn];
+     NSLog(@"%@ --%@",[self class],NSStringFromSelector(_cmd));
+    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+     NSLog(@"%@ --%@",[self class],NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+   NSLog(@"%@ --%@",[self class],NSStringFromSelector(_cmd));
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"%@ --%@",[self class],NSStringFromSelector(_cmd));
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+     NSLog(@"%@ --%@",[self class],NSStringFromSelector(_cmd));
+}
+
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    NSLog(@"%@ --%@",[self class],NSStringFromSelector(_cmd));
+}
+
+- (void)dealloc {
+  NSLog(@"%@ --%@",[self class],NSStringFromSelector(_cmd));
+}
+
 @end
