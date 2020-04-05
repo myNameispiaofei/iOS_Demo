@@ -105,8 +105,7 @@ typedef void(^ITTestBolock)(void);
 
 - (void)btnClickAction {
     MULifeViewController *lifeVC = [[MULifeViewController alloc] init];
-//    [self.navigationController pushViewController:lifeVC animated:YES];
-    [self presentViewController:lifeVC animated:YES completion:nil];
+    [self.navigationController pushViewController:lifeVC animated:YES];
     
 }
 

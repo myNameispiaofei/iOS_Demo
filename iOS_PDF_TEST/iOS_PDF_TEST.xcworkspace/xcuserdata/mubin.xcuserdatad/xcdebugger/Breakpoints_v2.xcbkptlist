@@ -37,5 +37,21 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38556C2C-F550-4025-9283-B7341DDBEE03"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_PDF_TEST/Test/Controller/MULifeViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "-saleTicketTowAreas"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
