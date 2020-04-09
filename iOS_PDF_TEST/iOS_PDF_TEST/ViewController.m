@@ -104,7 +104,7 @@ typedef void(^ITTestBolock)(void);
 
 
 - (void)btnClickAction {
-    MULifeViewController *lifeVC = [[MULifeViewController alloc] init];
+    ITTouchTestViewController *lifeVC = [[ITTouchTestViewController alloc] init];
     [self.navigationController pushViewController:lifeVC animated:YES];
     
 }

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ITTouchTestView : UIView
-@property (nonatomic, strong) NSString *name;
+
 
 @end
 

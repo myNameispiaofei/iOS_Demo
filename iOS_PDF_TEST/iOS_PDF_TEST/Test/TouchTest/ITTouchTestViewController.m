@@ -31,8 +31,9 @@
     [super viewDidLoad];
 //    [self test2];
     [self  configUI];
-    [self frameTest1];
-    [self frameTest2];
+    [self kvcTest];
+//    [self frameTest1];
+//    [self frameTest2];
 }
 // 不可变 赋值给 copy & strong
 //- (void)test1 {
@@ -55,6 +56,13 @@
 //    NSLog(@"_testStr:%p,_testStr1:%p ,tmp:casasc",&_testStr,&_testStr1,&str);
 //
 //}
+
+- (void)kvcTest {
+//    [self.containerView setValue:@"111" forKey:@"name"];
+     NSLog(@"dadad");
+     NSString * l =  [self.containerView valueForKey:@"name"];
+     NSLog(@"valeu for name %@",l);
+}
 
 - (void)frameTest1 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
@@ -124,14 +132,25 @@
 - (void)configUI {
 
     [self.view addSubview:self.containerView];
+    [self.containerView addSubview:self.testView];
 //    [self.containerView addSubview:self.subTestView];
 //    [self.containerView addSubview:self.testButton];
 //    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
 //    [self.containerView addGestureRecognizer:tapGes];
 //
-//    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.mas_equalTo(self.view);
-//    }];
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.mas_equalTo(self.view);
+        make.width.height.equalTo(@200);
+    }];
+    [self.testView mas_makeConstraints:^(MASConstraintMaker *make) {
+       make.centerX.centerY.mas_equalTo(self.view);
+        make.width.height.equalTo(@100);
+    }];
+    
+
+    UITapGestureRecognizer * ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+                                     
+    [self.containerView addGestureRecognizer:ges];
 //
 //    [self.subTestView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.left.mas_equalTo(self.containerView.mas_left).offset(70);
@@ -153,8 +172,8 @@
 - (ITTouchTestView *)containerView {
     if (!_containerView) {
         _containerView = [[ITTouchTestView alloc] init];
-        _containerView.backgroundColor = [UIColor grayColor];
-        _containerView.name = @"container";
+        _containerView.backgroundColor = [UIColor redColor];
+//        _containerView.name = @"container";
     }
     return _containerView;
 }
@@ -163,7 +182,7 @@
     if (!_subTestView) {
         _subTestView = [[ITTouchTestView alloc] init];
         _subTestView.backgroundColor = [UIColor yellowColor];
-        _subTestView.name = @"sub";
+//        _subTestView.name = @"sub";
     }
     return _subTestView;
 }
@@ -175,6 +194,14 @@
         [_testButton setBackgroundColor:[UIColor redColor]];
     }
     return _testButton;
+}
+
+- (UIView *)testView {
+    if (!_testView) {
+        _testView = [[UIView alloc] init];
+        _testView.backgroundColor = [UIColor yellowColor];
+    }
+    return _testView;
 }
 
 
