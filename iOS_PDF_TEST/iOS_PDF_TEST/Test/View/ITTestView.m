@@ -11,6 +11,13 @@
 @implementation ITTestView
 
 
+- (void)test1 {
+     NSLog(@" >> ITTestView test1 call %@", self);
+}
+- (void)test2 {
+     NSLog(@" >> ITTestView test2 call %@", self);
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         

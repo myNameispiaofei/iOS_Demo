@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ITTestView : UIView<CALayerDelegate>
 
+
+- (void)test1;
+- (void)test2;
+
 @end
 
 NS_ASSUME_NONNULL_END

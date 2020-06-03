@@ -13,6 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ITTouchTestView : UIView
 
 
+- (void)test1;
+- (void)test3;
+- (void)test4:(id)xxx;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

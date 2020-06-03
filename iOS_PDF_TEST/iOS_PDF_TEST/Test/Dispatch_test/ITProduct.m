@@ -10,6 +10,10 @@
 
 @implementation ITProduct
 
+- (void)test1 {
+    NSLog(@" >> ITProduct  call");
+}
+
 @end
 
 @implementation ITPartE

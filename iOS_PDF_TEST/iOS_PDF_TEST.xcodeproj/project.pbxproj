@@ -29,6 +29,9 @@
 		5E79BC3423278CBF007A3C66 /* ITCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79BC3223278CBF007A3C66 /* ITCommonTool.m */; };
 		5E79BC3523278CD3007A3C66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD64022B8C24500EE0856 /* main.m */; };
 		5E79C2102328FD92007A3C66 /* ITProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E79C20F2328FD91007A3C66 /* ITProduct.m */; };
+		5E7E850A24727EB2001D66E3 /* AliPayHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E850924727EB2001D66E3 /* AliPayHomePageController.m */; };
+		5E7E850F2472814A001D66E3 /* AliCustrmNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E850E2472814A001D66E3 /* AliCustrmNavView.m */; };
+		5E7E8A182472A2FB001D66E3 /* AliPayNavBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E8A172472A2FB001D66E3 /* AliPayNavBottomView.m */; };
 		5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */; };
 		5EB206A222F8554100774DEB /* ITTouchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A122F8554100774DEB /* ITTouchTestViewController.m */; };
 		5EB206A522F85DB700774DEB /* ITTouchTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB206A422F85DB700774DEB /* ITTouchTestView.m */; };
@@ -370,6 +373,12 @@
 		5E79C1752328A1A2007A3C66 /* inline_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inline_internal.h; sourceTree = "<group>"; };
 		5E79C20E2328FD91007A3C66 /* ITProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITProduct.h; sourceTree = "<group>"; };
 		5E79C20F2328FD91007A3C66 /* ITProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITProduct.m; sourceTree = "<group>"; };
+		5E7E850824727EB2001D66E3 /* AliPayHomePageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AliPayHomePageController.h; sourceTree = "<group>"; };
+		5E7E850924727EB2001D66E3 /* AliPayHomePageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AliPayHomePageController.m; sourceTree = "<group>"; };
+		5E7E850D2472814A001D66E3 /* AliCustrmNavView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AliCustrmNavView.h; sourceTree = "<group>"; };
+		5E7E850E2472814A001D66E3 /* AliCustrmNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AliCustrmNavView.m; sourceTree = "<group>"; };
+		5E7E8A162472A2FB001D66E3 /* AliPayNavBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AliPayNavBottomView.h; sourceTree = "<group>"; };
+		5E7E8A172472A2FB001D66E3 /* AliPayNavBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AliPayNavBottomView.m; sourceTree = "<group>"; };
 		5EA02B4E22DC8D9A0027557D /* NSDictionary+ITUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ITUtility.h"; sourceTree = "<group>"; };
 		5EA02B4F22DC8D9A0027557D /* NSDictionary+ITUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ITUtility.m"; sourceTree = "<group>"; };
 		5EB206A022F8554100774DEB /* ITTouchTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTouchTestViewController.h; sourceTree = "<group>"; };
@@ -508,6 +517,7 @@
 		5E54107C22C9AC20008EE4B7 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				5E7E84F724727E53001D66E3 /* APayPage */,
 				5EECAEE2230F8BF700E518C7 /* Dispatch_test */,
 				5EB2069F22F854FA00774DEB /* TouchTest */,
 				5EEDAC4E22EA9FBE002E537E /* SeaAniTest */,
@@ -955,6 +965,35 @@
 			path = event;
 			sourceTree = "<group>";
 		};
+		5E7E84F724727E53001D66E3 /* APayPage */ = {
+			isa = PBXGroup;
+			children = (
+				5E7E850C2472810F001D66E3 /* Controller */,
+				5E7E850B24727EE4001D66E3 /* View */,
+			);
+			path = APayPage;
+			sourceTree = "<group>";
+		};
+		5E7E850B24727EE4001D66E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E7E850D2472814A001D66E3 /* AliCustrmNavView.h */,
+				5E7E850E2472814A001D66E3 /* AliCustrmNavView.m */,
+				5E7E8A162472A2FB001D66E3 /* AliPayNavBottomView.h */,
+				5E7E8A172472A2FB001D66E3 /* AliPayNavBottomView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E7E850C2472810F001D66E3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E7E850824727EB2001D66E3 /* AliPayHomePageController.h */,
+				5E7E850924727EB2001D66E3 /* AliPayHomePageController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5EB2069F22F854FA00774DEB /* TouchTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -1291,8 +1330,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E79BC3523278CD3007A3C66 /* main.m in Sources */,
+				5E7E850F2472814A001D66E3 /* AliCustrmNavView.m in Sources */,
 				5EB9F92023B5F6DE001923D4 /* ITCommViewController.m in Sources */,
 				5E54108122C9AC6C008EE4B7 /* ITNavigationBar.m in Sources */,
+				5E7E850A24727EB2001D66E3 /* AliPayHomePageController.m in Sources */,
 				5E43A2E322D3734B0067D992 /* NSURL+ITUtility.m in Sources */,
 				5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */,
 				5E43A2DC22D34C890067D992 /* ITRouter.m in Sources */,
@@ -1309,6 +1350,7 @@
 				5E1FD63022B8C24300EE0856 /* AppDelegate.m in Sources */,
 				5E54108422C9AE9B008EE4B7 /* ITCommonTool.m in Sources */,
 				5E79BC3423278CBF007A3C66 /* ITCommonTool.m in Sources */,
+				5E7E8A182472A2FB001D66E3 /* AliPayNavBottomView.m in Sources */,
 				5EE61E1822CAFADB004E75E7 /* ITSelectViewController.m in Sources */,
 				5EB206A522F85DB700774DEB /* ITTouchTestView.m in Sources */,
 			);

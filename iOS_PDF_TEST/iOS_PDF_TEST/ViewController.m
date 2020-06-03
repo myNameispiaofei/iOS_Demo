@@ -15,6 +15,7 @@
 #import "ITDispatchTestController.h"
 #import "ITCommViewController.h"
 #import "MULifeViewController.h"
+#import "AliPayHomePageController.h"
 
 typedef void(^ITTestBolock)(void);
 
@@ -104,8 +105,10 @@ typedef void(^ITTestBolock)(void);
 
 
 - (void)btnClickAction {
-    ITTouchTestViewController *lifeVC = [[ITTouchTestViewController alloc] init];
-    [self.navigationController pushViewController:lifeVC animated:YES];
+    AliPayHomePageController  *aliVC = [[AliPayHomePageController alloc] init];
+    [self.navigationController pushViewController:aliVC animated:YES];
+//    ITTouchTestViewController *lifeVC = [[ITTouchTestViewController alloc] init];
+//    [self.navigationController pushViewController:lifeVC animated:YES];
     
 }
 

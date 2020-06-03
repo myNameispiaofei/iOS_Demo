@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface ITCommonTool : NSObject
-
 
 #define kRGBColor(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
@@ -29,6 +25,12 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:alphaValue]
 #define kIsEmptyString(s) (s == nil || [s isKindOfClass:[NSNull class]] || ([s isKindOfClass:[NSString class]] && s.length == 0))
 
 
+@interface ITCommonTool : NSObject
+
+
+
+
+
 @end
 
-NS_ASSUME_NONNULL_END
+

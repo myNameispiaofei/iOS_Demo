@@ -10,6 +10,9 @@
 #import "ITTouchTestView.h"
 #import <Masonry/Masonry.h>
 #import "ITCommonTool.h"
+#include <objc/runtime.h>
+#include <objc/objc.h>
+#include <objc/message.h>
 
 
 @interface ITTouchTestViewController ()
@@ -59,9 +62,9 @@
 
 - (void)kvcTest {
 //    [self.containerView setValue:@"111" forKey:@"name"];
-     NSLog(@"dadad");
-     NSString * l =  [self.containerView valueForKey:@"name"];
-     NSLog(@"valeu for name %@",l);
+//     NSLog(@"dadad");
+//     NSString * l =  [self.containerView valueForKey:@"name"];
+//     NSLog(@"valeu for name %@",l);
 }
 
 - (void)frameTest1 {
@@ -206,6 +209,8 @@
 
 
 - (void)tapAction {
+
+    [self.containerView test4:self];
     NSLog(@"#mub_touchTest# tapAction");
 }
 
