@@ -28,20 +28,7 @@
     self.window.rootViewController = nv;
     return YES;
     
-//    UIViewController *v1 = [[ITTestViewController alloc] init];
-//    UIViewController *v2 = [[ITSelectViewController alloc] init];
-//    self.tabarCV = [[UITabBarController alloc] init];
-//    self.tabarCV.viewControllers = @[v1, v2];
-//    self.tabarCV.delegate = self;
-//    UITabBarItem * item = [UITabBarItem new];
-//    item.title = @"11";
-//
-//    UITabBarItem * item1 = [UITabBarItem new];
-//    item1.title = @"22";
-//
-//    self.tabarCV.tabBarItem = item;
-//    self.window.rootViewController = self.tabarCV;
-//    return YES;
+
 }
 
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B5AAC622914BAD100ADDC26 /* TestTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AAC612914BAD100ADDC26 /* TestTransitionAnimator.m */; };
+		2B5AAC752914C38B00ADDC26 /* TestLandscapeVideoVCTempHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AAC742914C38B00ADDC26 /* TestLandscapeVideoVCTempHolder.m */; };
+		2B5AAC782914E7F700ADDC26 /* TestVideoFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AAC772914E7F700ADDC26 /* TestVideoFullScreenViewController.m */; };
 		40306D7A6AB9AB349825781D /* libPods-iOS_PDF_TEST.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA3561C2D4D4C33E3010D645 /* libPods-iOS_PDF_TEST.a */; };
 		5E1FD63022B8C24300EE0856 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD62F22B8C24300EE0856 /* AppDelegate.m */; };
 		5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FD63222B8C24300EE0856 /* ViewController.m */; };
@@ -144,6 +147,12 @@
 
 /* Begin PBXFileReference section */
 		0433EC1BFBBEF98D198F53E2 /* Pods-iOS_PDF_TEST.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_PDF_TEST.release.xcconfig"; path = "Target Support Files/Pods-iOS_PDF_TEST/Pods-iOS_PDF_TEST.release.xcconfig"; sourceTree = "<group>"; };
+		2B5AAC602914BAD100ADDC26 /* TestTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTransitionAnimator.h; sourceTree = "<group>"; };
+		2B5AAC612914BAD100ADDC26 /* TestTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTransitionAnimator.m; sourceTree = "<group>"; };
+		2B5AAC732914C38B00ADDC26 /* TestLandscapeVideoVCTempHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLandscapeVideoVCTempHolder.h; sourceTree = "<group>"; };
+		2B5AAC742914C38B00ADDC26 /* TestLandscapeVideoVCTempHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLandscapeVideoVCTempHolder.m; sourceTree = "<group>"; };
+		2B5AAC762914E7F700ADDC26 /* TestVideoFullScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVideoFullScreenViewController.h; sourceTree = "<group>"; };
+		2B5AAC772914E7F700ADDC26 /* TestVideoFullScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVideoFullScreenViewController.m; sourceTree = "<group>"; };
 		567D1F590D92D4C916B6B133 /* Pods-iOS_PDF_TEST.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_PDF_TEST.debug.xcconfig"; path = "Target Support Files/Pods-iOS_PDF_TEST/Pods-iOS_PDF_TEST.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1FD62B22B8C24300EE0856 /* iOS_PDF_TEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_PDF_TEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1FD62E22B8C24300EE0856 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -524,6 +533,10 @@
 				5E54108822C9DBAF008EE4B7 /* Controller */,
 				5E54108522C9AEA8008EE4B7 /* Tool */,
 				5E54107D22C9AC2F008EE4B7 /* View */,
+				2B5AAC602914BAD100ADDC26 /* TestTransitionAnimator.h */,
+				2B5AAC612914BAD100ADDC26 /* TestTransitionAnimator.m */,
+				2B5AAC762914E7F700ADDC26 /* TestVideoFullScreenViewController.h */,
+				2B5AAC772914E7F700ADDC26 /* TestVideoFullScreenViewController.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -535,6 +548,8 @@
 				5E54108022C9AC6C008EE4B7 /* ITNavigationBar.m */,
 				5E41F2222379068600A4029B /* ITTestView.h */,
 				5E41F2232379068600A4029B /* ITTestView.m */,
+				2B5AAC732914C38B00ADDC26 /* TestLandscapeVideoVCTempHolder.h */,
+				2B5AAC742914C38B00ADDC26 /* TestLandscapeVideoVCTempHolder.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1336,10 +1351,13 @@
 				5E7E850A24727EB2001D66E3 /* AliPayHomePageController.m in Sources */,
 				5E43A2E322D3734B0067D992 /* NSURL+ITUtility.m in Sources */,
 				5EA02B5022DC8D9A0027557D /* NSDictionary+ITUtility.m in Sources */,
+				2B5AAC782914E7F700ADDC26 /* TestVideoFullScreenViewController.m in Sources */,
 				5E43A2DC22D34C890067D992 /* ITRouter.m in Sources */,
 				5E41F2242379068600A4029B /* ITTestView.m in Sources */,
+				2B5AAC622914BAD100ADDC26 /* TestTransitionAnimator.m in Sources */,
 				5E1FD63922B8C24300EE0856 /* iOS_PDF_TEST.xcdatamodeld in Sources */,
 				5E79C2102328FD92007A3C66 /* ITProduct.m in Sources */,
+				2B5AAC752914C38B00ADDC26 /* TestLandscapeVideoVCTempHolder.m in Sources */,
 				5E1FD63322B8C24300EE0856 /* ViewController.m in Sources */,
 				5EECAEE5230F8F3800E518C7 /* ITDispatchTestController.m in Sources */,
 				5EB206A222F8554100774DEB /* ITTouchTestViewController.m in Sources */,
